@@ -24,7 +24,7 @@
                                     <td colspan="12" class="text-center">No Data</td>
                                  @else
                                     <td>{{ $about->title }}</td>
-                                    <td>{{ Str::limit($about->description, 200) }}</td>
+                                    <td>{!! Str::limit($about->description, 200) !!}</td>
                                     <td>
                                         <a class="badge bg-info" href="/about/{{ $about->id }}/edit">Edit</a>
                                     </td>

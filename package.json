@@ -20,5 +20,8 @@
         "resolve-url-loader": "^4.0.0",
         "sass": "^1.32.11",
         "sass-loader": "^11.0.1"
+    },
+    "dependencies": {
+        "@ckeditor/ckeditor5-easy-image": "^31.0.0"
     }
 }

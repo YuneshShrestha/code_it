@@ -346,5 +346,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/dist/js/adminlte.min.js"></script>
+{{-- CK editor --}}
+<script src="https://cdn.ckeditor.com/ckeditor5/31.0.0/classic/ckeditor.js"></script>
+
+<script>
+  ClassicEditor
+          .create( document.querySelector( '#description' ) )
+          .then( editor => {
+                  console.log( editor );
+          } )
+          .catch( error => {
+                  console.error( error );
+          } );
+</script>
 </body>
 </html>
