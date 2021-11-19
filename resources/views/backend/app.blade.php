@@ -224,7 +224,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
            {{-- Course Category --}}
            <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/category" class="nav-link">
               <i class="nav-icon fas fa-list"></i>
               <p>
                 Course Category
@@ -272,10 +272,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();" class="nav-link">
                      <i class="nav-icon fas fa-sign-out-alt"></i>
-                    <p>
-                        {{ __('Logout') }}
-                    </p>
-               
+                        {{ __('Logout') }}           
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf

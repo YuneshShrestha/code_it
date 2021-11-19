@@ -5,7 +5,7 @@
            <div class="col-md-12">
                <div class="card">
                    <div class="card-header">
-                        <a href="/about" class="btn btn-primary">Back</a>
+                        <a href="/category" class="btn btn-primary">Back</a>
                    </div>
                    <div class="card-body">
                         @if (session('message'))
@@ -13,21 +13,22 @@
                                 {{ session('message') }}
                             </div>
                          @endif
-                        <form action="/about/{{ $about->id }}" method="POST" enctype="multipart/form-data">
+                        <form action="/category/{{ $category->id }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('put')
                             <div class="form-group">
-                                <label for="title">Title*</label>
-                                <input id="title" class="form-control" type="text" name="title" placeholder="eg. About Us" value="{{ $about->title }}" required>
+                                <label for="name">Name*</label>
+                                <input id="name" class="form-control" type="text" name="name" placeholder="eg. Programming" value="{{ $category->name }}" required>
                             </div>
-                            @error('title')
+                            @error('name')
                                <p class="text-danger"> {{ $message }}</p>
                             @enderror
                             <div class="form-group">
-                                <label for="description">Description*</label>
-                                <textarea class="form-control" name="description" id="description" cols="30" rows="10" placeholder="Long Text..." required>{{ $about->description }}</textarea>
+                                <label for="image">Image(Opt.)</label>
+                                <input id="image" class="form-control-file" type="file" name="image">
                             </div>
-                            @error('description')
+          
+                            @error('image')
                                 <p class="text-danger">
                                     {{ $message }}
                                 </p>

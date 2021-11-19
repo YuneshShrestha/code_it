@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\CourseCategoryController;
 use App\Http\Controllers\Admin\SettingsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -30,5 +31,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('settings',SettingsController::class);
 // About Us
 Route::resource('about',AboutController::class);
-
+// Course category
+Route::resource('category',CourseCategoryController::class);
 // Admin Panel END

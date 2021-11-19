@@ -17,17 +17,21 @@
                             @csrf
                             <div class="form-group">
                                 <label for="title">Title*</label>
-                                <input id="title" class="form-control" type="text" name="title" placeholder="eg. About Us" value="{{ old('name') }}" required>
+                                <input id="title" class="form-control" type="text" name="title" placeholder="eg. About Us" value="{{ old('title') }}" required>
                             </div>
                             @error('title')
-                                {{ $message }}
+                                <p class="text-danger">
+                                    {{ $message }}
+                                </p>
                              @enderror
                             <div class="form-group">
                                 <label for="description">Description*</label>
                                 <textarea class="form-control" name="description" id="" cols="30" rows="10" required>{{ old('description') }}</textarea>
                             </div>
                             @error('description')
-                                {{ $message }}
+                                <p class="text-danger">
+                                    {{ $message }}
+                                </p>
                             @enderror
                         
                             <button type="submit" class="btn btn-primary">Save Record</button>

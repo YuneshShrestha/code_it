@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Setting;
+use App\Models\CourseCategory;
 use Illuminate\Http\Request;
 
-class SettingsController extends Controller
+class CourseCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class SettingsController extends Controller
      */
     public function index()
     {
-        $setting = Setting::first();
-        return view('backend.settings.index',compact('setting'));
+        $category = CourseCategory::all();
+        return view('backend.course_category.index',compact('category'));
     }
 
     /**
@@ -26,7 +26,7 @@ class SettingsController extends Controller
      */
     public function create()
     {
-        return view('backend.settings.create');
+        return view('backend.course_category.create');
     }
 
     /**
@@ -39,27 +39,26 @@ class SettingsController extends Controller
     {
         $request->validate([
             'name'=>'required',
-            'address'=>'required',
-            'contact'=>'required',
-            'email'=>'email',
-            'logo'=>'file|mimes:png,jpg,jpeg|max:5048',
+            'image'=>'file|mimes:png,jpg,jpeg|max:5048',
         ]);
-        $setting = new Setting();
-        $setting->name = $request->name;
-        $setting->address = $request->address;
-        $setting->contact = $request->contact;
-        $setting->email = $request->email;
-        $setting->regno = $request->regno;   
-        // Logo
-        if($request->hasFile('logo')){
-            $file = $request->logo;
+        $category = new CourseCategory();
+        $category->name = $request->name;
+
+        // image
+        if($request->hasFile('image')){
+            $file = $request->image;
             $newname = time().$file->getClientOriginalName();
             $file->move('images',$newname);
-            $setting->logo = 'images/'.$newname;
+            $category->image = 'images/'.$newname;
         }
-        $setting->save();
+        else
+        {
+            $category->image = 'default/default.png';
+        }
+        $category->save();
         $request->session()->flash('message','Record Saved');
         return redirect()->back();
+
     }
 
     /**
@@ -81,8 +80,8 @@ class SettingsController extends Controller
      */
     public function edit($id)
     {
-        $setting = Setting::find($id)->first();
-        return view('backend.settings.edit',compact('setting'));
+        $category = CourseCategory::first();
+        return view('backend.course_category.edit',compact('category'));
     }
 
     /**
@@ -96,25 +95,19 @@ class SettingsController extends Controller
     {
         $request->validate([
             'name'=>'required',
-            'address'=>'required',
-            'contact'=>'required',
-            'email'=>'email',
-            'logo'=>'file|mimes:png,jpg,jpeg|max:5048',
+            'image'=>'file|mimes:png,jpg,jpeg|max:5048',
         ]);
-        $setting = Setting::find($id);
-        $setting->name = $request->name;
-        $setting->address = $request->address;
-        $setting->contact = $request->contact;
-        $setting->email = $request->email;
-        $setting->regno = $request->regno;   
-        // Logo
-        if($request->hasFile('logo')){
-            $file = $request->logo;
+        $category = CourseCategory::find($id);
+        $category->name = $request->name;
+
+        // image
+        if($request->hasFile('image')){
+            $file = $request->image;
             $newname = time().$file->getClientOriginalName();
             $file->move('images',$newname);
-            $setting->logo = 'images/'.$newname;
+            $category->image = 'images/'.$newname;
         }
-        $setting->save();
+        $category->save();
         $request->session()->flash('message','Record Updated');
         return redirect()->back();
     }
