@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\CourseCategoryController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\UpcomingController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -36,4 +37,7 @@ Route::resource('about',AboutController::class);
 Route::resource('category',CourseCategoryController::class);
 // Course
 Route::resource('course',CourseController::class);
+// Upcoming
+Route::resource('upcoming',UpcomingController::class);
+
 // Admin Panel END

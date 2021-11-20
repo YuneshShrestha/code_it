@@ -211,7 +211,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
         {{-- General Settings --}}
           <li class="nav-item">
-            <a class="nav-link {{ (request()->is('settings')) ? 'active' : '' }}" href="/settings">
+            <a class="nav-link {{ (request()->is('settings*')) ? 'active' : '' }}" href="/settings">
               <i class="nav-icon fas fa-cogs"></i>
               <p>
                 General Settings
@@ -221,7 +221,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           {{-- About Us --}}
           <li class="nav-item">
-            <a href="/about" class="nav-link {{ (request()->is('about')) ? 'active' : '' }}">
+            <a href="/about" class="nav-link {{ (request()->is('about*')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-info-circle"></i>
               <p>
                 About Us
@@ -230,7 +230,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
            {{-- Course Category --}}
            <li class="nav-item">
-            <a href="/category" class="nav-link {{ (request()->is('category')) ? 'active' : '' }}">
+            <a href="/category" class="nav-link {{ (request()->is('category*')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-list"></i>
               <p>
                 Course Category
@@ -239,7 +239,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
            {{-- Courses --}}
            <li class="nav-item">
-            <a href="/course" class="nav-link {{ (request()->is('course')) ? 'active' : '' }}">
+            <a href="/course" class="nav-link {{ (request()->is('course*')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-laptop-code"></i>
               <p>
                 Courses
@@ -248,7 +248,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           {{-- Upcoming Classes --}}
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/upcoming" class="nav-link {{ (request()->is('upcoming*')) ? 'active' :'' }}">
               <i class="nav-icon fas fa-clock"></i>
               <p>
                 Upcoming Classes
