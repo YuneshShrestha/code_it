@@ -38,7 +38,7 @@ class CourseCategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'=>'required',
+            'name'=>'required|unique:course_categories',
             'image'=>'file|mimes:png,jpg,jpeg|max:5048',
         ]);
         $category = new CourseCategory();
@@ -94,7 +94,7 @@ class CourseCategoryController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name'=>'required',
+            'name'=>'required|unique:course_categories',
             'image'=>'file|mimes:png,jpg,jpeg|max:5048',
         ]);
         $category = CourseCategory::find($id);

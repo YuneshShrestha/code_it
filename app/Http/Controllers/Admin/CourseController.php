@@ -102,7 +102,7 @@ class CourseController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name'=>"required|unique:courses",
+            'name'=>"required|unique:courses,name,".$id,
             'duration'=>'required',
             'syllabus'=>'required',
             'image'=>'file|mimes:png,jpg,jpeg|max:5048',

@@ -16,6 +16,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <style>
+    .ck-editor__editable_inline {
+        min-height: 400px;
+    }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -233,7 +238,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
            {{-- Courses --}}
            <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/course" class="nav-link">
               <i class="nav-icon fas fa-laptop-code"></i>
               <p>
                 Courses
@@ -272,7 +277,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();" class="nav-link">
                      <i class="nav-icon fas fa-sign-out-alt"></i>
-                        {{ __('Logout') }}           
+                        <p>{{ __('Logout') }}</p>           
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
