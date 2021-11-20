@@ -46,7 +46,7 @@ class AboutController extends Controller
         $about->description = $request->description;
         $about->save();
         $request->session()->flash('message','Record Saved');
-        return redirect()->back();        
+        return redirect('/about');        
     }
 
     /**

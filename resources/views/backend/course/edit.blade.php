@@ -44,8 +44,8 @@
                                 </p>
                              @enderror --}}
                              <div class="form-group">
-                                <label for="fee">Fee*</label>
-                                <input id="fee" class="form-control" type="text" name="fee" placeholder="eg. Programming" value="{{ $course->fee }}" required>
+                                <label for="fee">Fee(In Rs.)(Opt.)</label>
+                                <input id="fee" class="form-control" type="text" name="fee" placeholder="eg. 12000" value="{{ $course->fee }}" required>
                             </div>
                              {{-- @error('fee')
                                 <p class="text-danger">

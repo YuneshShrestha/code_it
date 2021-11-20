@@ -211,16 +211,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
         {{-- General Settings --}}
           <li class="nav-item">
-            <a href="/settings" class="nav-link">
+            <a class="nav-link {{ (request()->is('settings')) ? 'active' : '' }}" href="/settings">
               <i class="nav-icon fas fa-cogs"></i>
               <p>
                 General Settings
+                {{-- {{request()->path()}} --}}
               </p>
             </a>
           </li>
           {{-- About Us --}}
           <li class="nav-item">
-            <a href="/about" class="nav-link">
+            <a href="/about" class="nav-link {{ (request()->is('about')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-info-circle"></i>
               <p>
                 About Us
@@ -229,7 +230,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
            {{-- Course Category --}}
            <li class="nav-item">
-            <a href="/category" class="nav-link">
+            <a href="/category" class="nav-link {{ (request()->is('category')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-list"></i>
               <p>
                 Course Category
@@ -238,7 +239,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
            {{-- Courses --}}
            <li class="nav-item">
-            <a href="/course" class="nav-link">
+            <a href="/course" class="nav-link {{ (request()->is('course')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-laptop-code"></i>
               <p>
                 Courses

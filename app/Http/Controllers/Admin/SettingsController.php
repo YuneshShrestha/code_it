@@ -59,7 +59,7 @@ class SettingsController extends Controller
         }
         $setting->save();
         $request->session()->flash('message','Record Saved');
-        return redirect()->back();
+        return redirect('/settings');
     }
 
     /**

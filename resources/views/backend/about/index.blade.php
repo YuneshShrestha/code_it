@@ -13,6 +13,11 @@
                         @endif
                    </div>
                    <div class="card-body">
+                    @if (session('message'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('message') }}
+                        </div>
+                     @endif
                         <table class="table table-striped">
                              <tr>
                                  <th style="width: 100px">Title</th>

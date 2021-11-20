@@ -8,11 +8,6 @@
                         <a href="/settings" class="btn btn-primary">Back</a>
                    </div>
                    <div class="card-body">
-                        @if (session('message'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('message') }}
-                            </div>
-                         @endif
                         <form action="/settings" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">

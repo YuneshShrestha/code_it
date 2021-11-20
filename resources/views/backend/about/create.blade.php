@@ -8,11 +8,6 @@
                         <a href="/about" class="btn btn-primary">Back</a>
                    </div>
                    <div class="card-body">
-                        @if (session('message'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('message') }}
-                            </div>
-                         @endif
                         <form action="/about" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
@@ -26,7 +21,7 @@
                              @enderror
                             <div class="form-group">
                                 <label for="description">Description*</label>
-                                <textarea class="form-control" name="description" id="" cols="30" rows="10" required>{{ old('description') }}</textarea>
+                                <textarea id="description" class="form-control" name="description" rows="3"></textarea>
                             </div>
                             @error('description')
                                 <p class="text-danger">
