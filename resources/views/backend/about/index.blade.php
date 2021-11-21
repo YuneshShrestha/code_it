@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-           <div class="col-md-12">
+           <div class="col-lg-12 d-lg-block d-none">
                <div class="card">
                    <div class="card-header">
                         @if (empty($about))
@@ -40,6 +40,29 @@
                    </div>
                </div>
            </div> 
+
+           {{-- middle screen --}}
+           <div class="d-lg-none d-block ">
+               <div class="card">
+                   <div class="card-body">
+                       <table class="table table-striped">
+                           @if (!isset($about))
+                               <tr colspan = '12' class="text-center">No Data</tr>
+                           @else
+                            <tr>
+                                <th>Title</th>
+                                <td>{{ $about->title }}</td>
+                            </tr>
+                            <tr>
+                                <th>Description</th>
+                                <td>{!! Str::limit($about->description, 200) !!}</td>
+                            </tr>
+                           @endif
+                            
+                       </table>
+                   </div>
+               </div>
+           </div>
         </div>
     </div>
 @endsection
