@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-           <div class="col-md-12">
+           <div class="col-lg-12 d-lg-block d-none">
                <div class="card">
                    <div class="card-header">
                         @if (empty($setting))
@@ -48,6 +48,46 @@
                    </div>
                </div>
            </div> 
+
+
+           {{-- Middle Screen --}}
+           <div class="col-12 d-block d-lg-none">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            @if (!isset($setting))
+                                <tr colspan="12" class="text-center">No Data</tr>
+                            @else
+                                <tr>
+                                    <th>Logo</th>
+                                    <td><img src="{{ asset($setting->logo) }}" alt="company logo" class="img-thumbnail" width="50px" height="50px" style="object-fit: cover;"></td>
+                                </tr>
+                                <tr>
+                                    <th>Company Name</th>
+                                    <td>{{ $setting->name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Address</th>
+                                    <td>{{ $setting->address }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Contact</th>
+                                    <td>{{ $setting->contact }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Email</th>
+                                    <td>{{ $setting->email }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Reg No. </th>
+                                    <td>{{ $setting->regno }}</td>
+                                </tr>
+                            @endif
+                        </table>
+                    </div>
+                </div>
+           </div>
+
         </div>
     </div>
 @endsection

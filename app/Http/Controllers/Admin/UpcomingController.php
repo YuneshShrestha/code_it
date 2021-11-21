@@ -89,7 +89,22 @@ class UpcomingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'date'=>'required',
+            'time'=>'required',
+            'course'=>'required',
+            'class_type'=>'required',
+            'status'=>'required'
+        ]);
+        $upcoming = Upcoming::find($id);
+        $upcoming->date = $request->date;
+        $upcoming->time = $request->time;
+        $upcoming->course_id = $request->course;
+        $upcoming->class_type = $request->class_type;
+        $upcoming->status = $request->status;
+        $upcoming->update();
+        $request->session()->flash('message','Record Updated');
+        return redirect()->back();
     }
 
     /**

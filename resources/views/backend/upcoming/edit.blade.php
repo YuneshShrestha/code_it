@@ -13,7 +13,7 @@
                                 {{ session('message') }}
                             </div>
                          @endif
-                        <form action="/upcoming/{{ $upcoming->id }}/edit" method="POST" enctype="multipart/form-data">
+                        <form action="/upcoming/{{ $upcoming->id }}" method="POST" enctype="multipart/form-data">
                             @method('PUT')
                             @csrf
                             <div class="form-group">
@@ -49,7 +49,14 @@
                                   <option value="Online" {{ 'Online'==$upcoming->class_type ? 'selected' : '' }}>Online</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary">Save Record</button>
+                            <div class="form-group">
+                                <label for="status">Status*</label>
+                                <select id="status" class="form-control" name="status">
+                                  <option value="0" {{ '0'==$upcoming->status ? 'selected' : '' }}>Inactive</option>
+                                  <option value="1" {{ '1'==$upcoming->status ? 'selected' : '' }}>Active</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Record</button>
                         </form>
                    </div>
                </div>
