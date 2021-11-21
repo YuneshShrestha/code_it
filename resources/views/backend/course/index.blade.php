@@ -8,6 +8,7 @@
                             <a href="/course/create" class="btn btn-primary">Add Course</a>
                    </div>
                    <div class="card-body">
+                       
                         <table class="table table-striped">
                              <tr>
                                  <th>Image</th>

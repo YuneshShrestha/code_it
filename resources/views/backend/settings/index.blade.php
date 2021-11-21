@@ -53,11 +53,25 @@
            {{-- Middle Screen --}}
            <div class="col-12 d-block d-lg-none">
                 <div class="card">
-                    <div class="card-body">
-                        <table class="table table-striped">
+                    <div class="card-header">
+                            @if (empty($setting))
+                                <a href="/settings/create" class="btn btn-primary">Add Settings</a>
+                                
+                            @else
+                                <h3>Company</h3>
+                            @endif
+                    </div>
+                    <div class="card-body table-responsive">
+                        @if (session('message'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('message') }}
+                            </div>
+                        @endif
+                        <table class="table">
                             @if (!isset($setting))
                                 <tr colspan="12" class="text-center">No Data</tr>
                             @else
+                            
                                 <tr>
                                     <th>Logo</th>
                                     <td><img src="{{ asset($setting->logo) }}" alt="company logo" class="img-thumbnail" width="50px" height="50px" style="object-fit: cover;"></td>
@@ -81,6 +95,12 @@
                                 <tr>
                                     <th>Reg No. </th>
                                     <td>{{ $setting->regno }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Action </th>
+                                    <td>
+                                        <a class="badge bg-info" href="/settings/{{ $setting->id }}/edit">Edit</a>
+                                    </td>
                                 </tr>
                             @endif
                         </table>

@@ -12,7 +12,7 @@
                             <h3>About Us</h3>
                         @endif
                    </div>
-                   <div class="card-body">
+                   <div class="card-body table-responsive">
                     @if (session('message'))
                         <div class="alert alert-success" role="alert">
                             {{ session('message') }}
@@ -42,12 +42,27 @@
            </div> 
 
            {{-- middle screen --}}
-           <div class="d-lg-none d-block ">
+           <div class="col-12 d-lg-none d-block ">
                <div class="card">
+                    <div class="card-header">
+                            @if (empty($about))
+                                <a href="/about/create" class="btn btn-primary">Add about</a>
+                                
+                            @else
+                                <h3>About Us</h3>
+                            @endif
+                    </div>
                    <div class="card-body">
-                       <table class="table table-striped">
+                    @if (session('message'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('message') }}
+                        </div>
+                    @endif
+                       <table class="table">
                            @if (!isset($about))
-                               <tr colspan = '12' class="text-center">No Data</tr>
+                               <tr colspan = "12" class="text-center">
+                                   <td>No Data</td>
+                               </tr>
                            @else
                             <tr>
                                 <th>Title</th>
@@ -56,6 +71,12 @@
                             <tr>
                                 <th>Description</th>
                                 <td>{!! Str::limit($about->description, 200) !!}</td>
+                            </tr>
+                            <tr>
+                                <th>Action</th>
+                                <td>
+                                    <a class="badge bg-info" href="/about/{{ $about->id }}/edit">Edit</a>
+                                </td>
                             </tr>
                            @endif
                             
