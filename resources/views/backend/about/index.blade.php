@@ -12,7 +12,7 @@
                             <h3>About Us</h3>
                         @endif
                    </div>
-                   <div class="card-body table-responsive">
+                   <div class="card-body">
                     @if (session('message'))
                         <div class="alert alert-success" role="alert">
                             {{ session('message') }}
@@ -58,7 +58,7 @@
                             {{ session('message') }}
                         </div>
                     @endif
-                       <table class="table">
+                       <table class="table table-responsive">
                            @if (!isset($about))
                                <tr colspan = "12" class="text-center">
                                    <td>No Data</td>
