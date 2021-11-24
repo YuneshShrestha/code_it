@@ -7,7 +7,7 @@
                    <div class="card-header">
                             <a href="/course/create" class="btn btn-primary">Add Course</a>
                    </div>
-                   <div class="card-body">
+                   <div class="card-body table-responsive">
                        
                         <table class="table table-striped">
                              <tr>

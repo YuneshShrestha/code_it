@@ -9,7 +9,7 @@
                             <a href="/upcoming/create" class="btn btn-primary">Add Upcoming Class</a>
                    </div>
                    <div class="card-body">
-                        <table class="table table-striped">
+                        <table class="table table-striped table-responsive">
                              <tr>
                                  <th>SN</th>
                                  <th>Course</th>

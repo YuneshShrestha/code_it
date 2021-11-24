@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CourseCategoryController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\SettingsController;
@@ -39,5 +40,6 @@ Route::resource('category',CourseCategoryController::class);
 Route::resource('course',CourseController::class);
 // Upcoming
 Route::resource('upcoming',UpcomingController::class);
-
+// Blogs
+Route::resource('blog',BlogController::class);
 // Admin Panel END

@@ -12,7 +12,7 @@
                             <h3>Company</h3>
                         @endif
                    </div>
-                   <div class="card-body">
+                   <div class="card-body table-responsive">
                     @if (session('message'))
                         <div class="alert alert-success" role="alert">
                             {{ session('message') }}

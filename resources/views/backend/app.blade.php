@@ -257,7 +257,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           {{-- Blog --}}
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/blog" class="nav-link {{ (request()->is('blog*'))?'active':'' }}">
               <i class="nav-icon fas fa-blog"></i>
               <p>
                 Blog
