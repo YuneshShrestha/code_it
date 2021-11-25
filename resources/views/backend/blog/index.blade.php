@@ -21,12 +21,12 @@
                              
                                    @foreach ($blog as $count=>$data)
                                    <tr>
-                                       <td>{{ ++$count }}</td>
-                                       <td><img src="{{ asset($data->featured) }}" alt="blog image" class="img-thumbnail" width="80px" height="80px"></td>
-                                       <td>{{ $data->title }}</td>
-                                       <td>{!! Str::limit($data->description,100) !!}</td>
-                                       <td>{{ $data->created_at->diffForHumans() }}</td>
-                                       <td>
+                                       <td width="10%">{{ ++$count }}</td>
+                                       <td width="15%"><img src="{{ asset($data->featured) }}" alt="blog image" class="img-thumbnail" width="80px" height="80px"></td>
+                                       <td width="15%">{{ $data->title }}</td>
+                                       <td width="35%">{!! Str::limit($data->description,100) !!}</td>
+                                       <td width="15%">{{ $data->created_at->diffForHumans() }}</td>
+                                       <td width="10%" class="d-block">
                                             <a class="badge bg-info" href="/blog/{{ $data->id }}/edit">Edit</a>
                                             <form action="/blog/{{ $data->id }}" method="POST">
                                                 @csrf

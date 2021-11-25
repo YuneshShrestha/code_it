@@ -125,7 +125,7 @@ class CourseController extends Controller
         {
             $course->image = 'default/default.png';
         }
-        $course->save();
+        $course->update();
         $request->session()->flash('message','Record Updated');
         return redirect()->back();
     }

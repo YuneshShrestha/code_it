@@ -114,7 +114,7 @@ class SettingsController extends Controller
             $file->move('images',$newname);
             $setting->logo = 'images/'.$newname;
         }
-        $setting->save();
+        $setting->update();
         $request->session()->flash('message','Record Updated');
         return redirect()->back();
     }

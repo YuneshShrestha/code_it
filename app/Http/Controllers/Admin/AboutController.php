@@ -88,7 +88,7 @@ class AboutController extends Controller
         $about = About::find($id);
         $about->title = $request->title;
         $about->description = $request->description;
-        $about->save();
+        $about->update();
         $request->session()->flash('message','Record Updated');
         return redirect()->back(); 
     }

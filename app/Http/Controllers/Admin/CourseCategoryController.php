@@ -107,7 +107,7 @@ class CourseCategoryController extends Controller
             $file->move('images',$newname);
             $category->image = 'images/'.$newname;
         }
-        $category->save();
+        $category->update();
         $request->session()->flash('message','Record Updated');
         return redirect()->back();
     }

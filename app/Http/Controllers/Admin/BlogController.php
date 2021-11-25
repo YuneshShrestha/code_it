@@ -112,7 +112,7 @@ class BlogController extends Controller
         {
             $blog->featured = 'default/default.png';
         }
-        $blog->save();
+        $blog->update();
         $request->session()->flash('message','Record Updated');
         return redirect()->back();
     }
