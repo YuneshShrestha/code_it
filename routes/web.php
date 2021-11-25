@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CourseCategoryController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\UpcomingController;
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -42,4 +43,9 @@ Route::resource('course',CourseController::class);
 Route::resource('upcoming',UpcomingController::class);
 // Blogs
 Route::resource('blog',BlogController::class);
+
 // Admin Panel END
+
+// Front End Start
+Route::get('/frontend',[FrontendController::class, 'home']);
+// Front end end
