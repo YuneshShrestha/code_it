@@ -13,6 +13,7 @@
     {{-- navbar end --}}
 
     {{-- main content start --}}
+    @yield('content')
     {{-- main content end --}}
 
     {{-- footer start --}}

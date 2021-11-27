@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link {{ (request()->is('/frontend'))?'active':'' }}" aria-current="page" href="/frontend">Home</a>
           </li>
           @foreach ($categories as $category)
             <li class="nav-item dropdown">
@@ -20,7 +20,7 @@
                    @foreach ($category->course as $course)
                         @if ($category->id == $course->category_id)
                          
-                            <li><a class="dropdown-item" href="#">{{ $course->name }}</a></li>
+                            <li><a class="dropdown-item" href="/frontend/{{ $category->name }}/{{ $course->id }}">{{ $course->name }}</a></li>
                             <p class="d-none">{{ ++$count }}</p>
                         @endif
                     

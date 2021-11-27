@@ -48,4 +48,5 @@ Route::resource('blog',BlogController::class);
 
 // Front End Start
 Route::get('/frontend',[FrontendController::class, 'home']);
+Route::get('/frontend/{category}/{id}',[FrontendController::class,'courses']);
 // Front end end
