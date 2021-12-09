@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\MessageResource;
 use App\Models\Message;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+        $message = Message::all();
+        return MessageResource::collection($message);
     }
 
     /**
