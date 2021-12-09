@@ -19,7 +19,8 @@ class BlogResource extends JsonResource
             "id"=>$this->id,
             "title"=>$this->title,
             "description"=>$this->description,
-            "image"=>asset($this->featured)
+            "image"=>asset($this->featured),
+            "created_at"=>$this->created_at->diffForHumans()
         ];
     }
 }

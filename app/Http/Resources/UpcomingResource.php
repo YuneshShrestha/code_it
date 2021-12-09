@@ -17,8 +17,8 @@ class UpcomingResource extends JsonResource
         // return parent::toArray($request);
         return [
             "id"=>$this->id,
-            "date"=>$this->date,
-            "time"=>$this->time,
+            "date"=>date('d M,Y', strtotime($this->date)),
+            "time"=>date('h:i A', strtotime($this->time)),
             "course"=>$this->course->name,
             "status"=>$this->status ? "true" : "false",
             "class_type"=>$this->class_type
