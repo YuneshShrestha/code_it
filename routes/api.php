@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\UpcomingController;
 use App\Http\Controllers\Api\AboutController;
+use App\Http\Controllers\Api\BlogController;
 use App\Http\Controllers\Api\CourseCategoryController;
 use App\Http\Controllers\Api\SettingController;
 use Illuminate\Http\Request;
@@ -23,3 +25,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('setting',SettingController::class);
 Route::apiResource('courseType',CourseCategoryController::class);
 Route::apiResource('about',AboutController::class);
+Route::apiResource('upcoming',UpcomingController::class);
+Route::apiResource('blog',BlogController::class);

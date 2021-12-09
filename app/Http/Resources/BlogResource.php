@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CourseResource extends JsonResource
+class BlogResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,13 +16,10 @@ class CourseResource extends JsonResource
     {
         // return parent::toArray($request);
         return [
-            'id'=>$this->id,
-            'name'=>$this->name,
-            'fee'=>$this->fee,
-            'duration'=>$this->duration,
-            'syllabus'=>$this->syllabus,
-            'image'=>asset($this->image),
-            'category_id'=>$this->category_id
+            "id"=>$this->id,
+            "title"=>$this->title,
+            "description"=>$this->description,
+            "image"=>asset($this->featured)
         ];
     }
 }

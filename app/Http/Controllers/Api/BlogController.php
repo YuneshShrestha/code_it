@@ -3,13 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\CourseCategoryResource;
-use App\Http\Resources\CourseResource;
-use App\Models\Course;
-use App\Models\CourseCategory;
+use App\Http\Resources\BlogResource;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
-class CourseCategoryController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +16,8 @@ class CourseCategoryController extends Controller
      */
     public function index()
     {
-        $courseCategory = CourseCategory::all();
-        return CourseCategoryResource::collection($courseCategory);
+        $blog = Blog::all();
+        return BlogResource::collection($blog);
     }
 
     /**
@@ -41,9 +39,7 @@ class CourseCategoryController extends Controller
      */
     public function show($id)
     {
-        $courses = Course::where('category_id',$id)->get();
-        // return response()->json($courses);
-        return CourseResource::collection($courses);
+        //
     }
 
     /**
